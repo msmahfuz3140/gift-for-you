@@ -1,0 +1,14 @@
+{
+  "name": "shuvro-birthday-gift",
+  "version": "1.0.0",
+  "description": "Happy Birthday Shuvro - Romantic Birthday Surprise Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "open": "start index.html"
+  },
+  "keywords": ["birthday", "gift"],
+  "author": "",
+  "license": "ISC"
+}

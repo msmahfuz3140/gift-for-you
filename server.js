@@ -1,8 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
 
-const PORT = process.env.PORT || 8088;
+let PORT = process.env.PORT || 8088;
 const MIME_TYPES = {
   '.html': 'text/html',
   '.css': 'text/css',
@@ -37,6 +38,27 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-});
+function startServer(port) {
+  server.listen(port, () => {
+    const url = `http://localhost:${port}/`;
+    console.log(`\n========================================`);
+    console.log(`🎉 Birthday Website is running!`);
+    console.log(`👉 Open in browser: ${url}`);
+    console.log(`========================================\n`);
+
+    // Auto open in Windows default browser
+    exec(`start ${url}`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${port} is in use, trying port ${port + 1}...`);
+      server.close();
+      startServer(port + 1);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+}
+
+startServer(Number(PORT));
