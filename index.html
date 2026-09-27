@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday My Love! ❤️ | 28th September</title>
+  <meta name="description"
+    content="A special birthday surprise for the most amazing person in the world. Happy Birthday! 28th September.">
+
+  <!-- Google Fonts for Luxury & Romantic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Canvas for Starry Sky, Sparkles & Fireworks -->
+  <canvas id="fireworks-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Floating Ambient Hearts / Particles Container -->
+  <div id="floating-hearts-container"></div>
+
+  <!-- Music Toggle Floating Pill -->
+  <div class="music-controller" id="music-btn" title="Toggle Romantic Music">
+    <div class="music-visualizer" id="visualizer">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <span class="music-text" id="music-text">Music On</span>
+    <span class="music-icon" id="music-icon">🎵</span>
+  </div>
+
+  <!-- ==============================================
+       SCENE 1: THE MYSTERIOUS LUXURY GIFT BOX TEASER
+       ============================================== -->
+  <section class="scene-teaser" id="scene-teaser">
+    <div class="stars-backdrop"></div>
+
+    <div class="teaser-content">
+      <div class="date-badge">
+        <span class="sparkle-icon">✨</span>
+        <span>28 SEPTEMBER • A SPECIAL DAY</span>
+        <span class="sparkle-icon">✨</span>
+      </div>
+
+      <h1 class="teaser-title">Someone Very Special Was Born Today...</h1>
+      <p class="teaser-subtitle">A little surprise wrapped with all my love, just for you ❤️</p>
+
+      <!-- 3D Realistic Animated Gift Box -->
+      <div class="gift-box-wrapper" id="gift-box-trigger">
+        <div class="glow-halo"></div>
+        <div class="gift-box" id="gift-box">
+          <!-- Lid -->
+          <div class="gift-lid" id="gift-lid">
+            <div class="ribbon-bow">
+              <div class="bow-loop left"></div>
+              <div class="bow-knot"></div>
+              <div class="bow-loop right"></div>
+            </div>
+            <div class="lid-stripe"></div>
+          </div>
+          <!-- Box Body -->
+          <div class="gift-body">
+            <div class="body-stripe vertical"></div>
+            <div class="body-stripe horizontal"></div>
+            <div class="box-face front"></div>
+            <!-- Glow bursting from inside -->
+            <div class="inside-burst" id="inside-burst"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button class="btn-open-box" id="btn-open-box">
+        <span class="btn-glow"></span>
+        <span class="btn-text">🎁 Open Your Surprise</span>
+        <span class="btn-particles">✨</span>
+      </button>
+
+      <p class="teaser-hint">Tap the gift box or button to unlock the magic</p>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SCENE 2: GRAND BIRTHDAY CELEBRATION SHOWCASE
+       ============================================== -->
+  <main class="scene-celebration hidden" id="scene-celebration">
+
+    <!-- Hero Banner with 3D Glowing Text -->
+    <header class="celebration-hero">
+      <div class="hero-badge">
+        <span>🎉 Happy Birthday, Shuvro 👑</span>
+      </div>
+      <h1 class="grand-birthday-title">
+        <span class="line-1">HAPPY BIRTHDAY</span>
+        <span class="line-2" id="display-name">SHUVRO ❤️</span>
+      </h1>
+      <p class="hero-date">
+        <span class="calendar-icon">📅</span> 28th September — The Day The World Got A Lot More Handsome!
+      </p>
+
+      <!-- Quick Action Floating Buttons -->
+      <div class="hero-actions">
+        <button class="action-chip" id="btn-blow-candles-jump">🎂 Blow Candles</button>
+        <button class="action-chip" id="btn-read-letter-jump">💌 Love Letter</button>
+        <button class="action-chip" id="btn-re-celebrate">🎊 Burst Confetti</button>
+      </div>
+    </header>
+
+    <!-- Interactive Birthday Cake Section -->
+    <section class="cake-section" id="cake-section">
+      <div class="section-badge">✨ Make A Birthday Wish ✨</div>
+      <h2 class="section-title">Blow Out Your Birthday Candles</h2>
+      <p class="section-desc">Tap the candles to blow them out and make your biggest wish come true!</p>
+
+      <div class="cake-container">
+        <div class="cake" id="interactive-cake">
+          <!-- Candles Layer -->
+          <div class="candles-row" id="candles-row">
+            <div class="candle active" data-candle="1">
+              <div class="flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+            <div class="candle active" data-candle="2">
+              <div class="flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+            <div class="candle active" data-candle="3">
+              <div class="flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+          </div>
+
+          <!-- Cake Layers -->
+          <div class="cake-tier tier-top">
+            <div class="frosting">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="cake-tier tier-middle">
+            <div class="frosting">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="cake-tier tier-bottom">
+            <div class="cream-decorations">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="cake-plate"></div>
+        </div>
+
+        <!-- Wish Message Box (Appears after blowing) -->
+        <div class="wish-reveal-box" id="wish-reveal-box">
+          <div class="wish-star">🌟</div>
+          <p class="wish-message">
+            <strong>"May all your secret wishes and sweetest dreams come true today & always!"</strong>
+          </p>
+          <span class="wish-sub">I'm so blessed to have you in my life. Forever yours! 💖</span>
+        </div>
+
+        <button class="btn-blow" id="btn-blow-action">
+          💨 Tap Here To Blow Candles
+        </button>
+      </div>
+    </section>
+
+    <!-- Memory Polaroid Showcase / Photo Wall -->
+    <section class="memories-section" id="memories-section">
+      <div class="section-badge">📸 Special Moments</div>
+      <h2 class="section-title">Captured In My Heart</h2>
+      <p class="section-desc">Every single second with you is my absolute favorite memory.</p>
+
+      <div class="polaroid-grid">
+        <!-- Card 1 -->
+        <div class="polaroid-card tilt-left">
+          <div class="pin"></div>
+          <div class="photo-frame">
+            <div class="photo-placeholder photo-1">
+              <span class="photo-art">👑</span>
+              <p class="photo-art-text">The Man Who Stole My Heart</p>
+            </div>
+            <img class="user-custom-img hidden" id="photo-preview-1" alt="Special Memory 1">
+          </div>
+          <div class="polaroid-caption">
+            <h3>That Irresistible Smile 😊</h3>
+            <p>The smile that instantly brightens up my darkest days.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="polaroid-card tilt-straight">
+          <div class="pin"></div>
+          <div class="photo-frame">
+            <div class="photo-placeholder photo-2">
+              <span class="photo-art">💖</span>
+              <p class="photo-art-text">You & Me Against The World</p>
+            </div>
+            <img class="user-custom-img hidden" id="photo-preview-2" alt="Special Memory 2">
+          </div>
+          <div class="polaroid-caption">
+            <h3>My Safe Haven 🏡</h3>
+            <p>In your arms is where I always feel truly at home.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="polaroid-card tilt-right">
+          <div class="pin"></div>
+          <div class="photo-frame">
+            <div class="photo-placeholder photo-3">
+              <span class="photo-art">✨</span>
+              <p class="photo-art-text">28 September • My Lucky Star</p>
+            </div>
+            <img class="user-custom-img hidden" id="photo-preview-3" alt="Special Memory 3">
+          </div>
+          <div class="polaroid-caption">
+            <h3>My Best Friend & Love 💫</h3>
+            <p>Thank you for simply existing and choosing me every day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Easy Photo Uploader Tool (Client side preview, saves to localStorage) -->
+      <div class="custom-photo-uploader">
+        <label for="photo-file-input" class="upload-badge-btn">
+          <span>📷 Add His Real Photos Here (Optional)</span>
+        </label>
+        <input type="file" id="photo-file-input" accept="image/*" multiple class="hidden-input">
+        <p class="upload-note">Click to put his handsome photos in the frames above!</p>
+      </div>
+    </section>
+
+    <!-- Reasons Why I Adore You - Interactive Flip Cards -->
+    <section class="reasons-section">
+      <div class="section-badge">💌 From The Heart</div>
+      <h2 class="section-title">A Few Reasons Why I Love You</h2>
+      <p class="section-desc">Tap any card to uncover a piece of my heart</p>
+
+      <div class="reasons-carousel">
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="reason-num">01</span>
+              <div class="card-icon">🌟</div>
+              <h3>Your Golden Heart</h3>
+              <p class="tap-hint">Tap to reveal ➜</p>
+            </div>
+            <div class="card-back">
+              <h3>Pure & Kind</h3>
+              <p>The genuine kindness and warmth you show to everyone around you is so rare and breathtaking.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="reason-num">02</span>
+              <div class="card-icon">🛡️</div>
+              <h3>How Safe You Make Me Feel</h3>
+              <p class="tap-hint">Tap to reveal ➜</p>
+            </div>
+            <div class="card-back">
+              <h3>My Protector</h3>
+              <p>Whenever you hold my hand or listen to me, every anxiety melts away. You are my greatest peace.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="reason-num">03</span>
+              <div class="card-icon">😂</div>
+              <h3>Your Cute Sense of Humor</h3>
+              <p class="tap-hint">Tap to reveal ➜</p>
+            </div>
+            <div class="card-back">
+              <h3>My Favorite Comedian</h3>
+              <p>Nobody makes me laugh till my stomach hurts like you do. Even on my worst days, you find a way.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="reason-num">04</span>
+              <div class="card-icon">♾️</div>
+              <h3>Being My Soulmate</h3>
+              <p class="tap-hint">Tap to reveal ➜</p>
+            </div>
+            <div class="card-back">
+              <h3>Forever & Always</h3>
+              <p>I didn't believe in fairy tales until you walked into my life. Happy Birthday to my today and all of my
+                tomorrows!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Romantic Love Letter Section -->
+    <section class="letter-section" id="letter-section">
+      <div class="letter-container">
+        <!-- Closed Envelope State -->
+        <div class="envelope-box" id="envelope-box">
+          <div class="envelope-back"></div>
+          <div class="letter-paper-preview"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap" id="envelope-flap"></div>
+          <div class="wax-seal" id="wax-seal" title="Tap to open the letter">
+            <span>❤️</span>
+          </div>
+          <div class="envelope-label">Tap Wax Seal to Read My Letter</div>
+        </div>
+
+        <!-- Open Letter View Modal/Paper -->
+        <div class="opened-letter-sheet" id="opened-letter-sheet">
+          <button class="close-letter-btn" id="close-letter-btn">✕ Close Letter</button>
+          <div class="letter-inner">
+            <div class="letter-header">
+              <span class="letter-date">28th September 2026</span>
+              <h2 class="letter-salutation">To My Dearest Shuvro ❤️</h2>
+            </div>
+            <div class="letter-body">
+              <p>
+                Happy Birthday, Shuvro! 🎂❤️ Today is the most special day because on this day, 28th September, the
+                universe decided to gift the world the most caring, handsome, and amazing human being —
+                <strong>YOU</strong>.
+              </p>
+              <p>
+                Words can never truly explain how much you mean to me. You are not just my boyfriend; you are my best
+                friend, my secret-keeper, my biggest cheerleader, and my safest home. Every time you smile, my whole
+                world lights up.
+              </p>
+              <p>
+                Thank you for loving me, for holding my hand through thick and thin, and for always being my rock. On
+                your special birthday, I pray that Allah/God blesses you with endless success, good health, peace of
+                mind, and all the happiness in this universe.
+              </p>
+              <p>
+                I promise to celebrate every birthday by your side, annoying you with my endless love and hugs forever!
+              </p>
+              <div class="letter-sign">
+                <p>Always & Forever Yours,</p>
+                <span class="handwritten-signature">With all my love ❤️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Love Jar / Wishes Drop -->
+    <section class="surprise-meter-section">
+      <div class="surprise-card">
+        <h3>How Much Do I Love You? 💖</h3>
+        <div class="meter-bar-container">
+          <div class="meter-fill" id="meter-fill" style="width: 100%;">
+            <span>Infinity % 🔥</span>
+          </div>
+        </div>
+        <p class="meter-text">Beyond the stars, the galaxies, and time itself!</p>
+        <button class="btn-heart-burst" id="btn-heart-burst">
+          💓 Send Endless Love (Click Me)
+        </button>
+      </div>
+    </section>
+
+    <!-- Romantic Footer -->
+    <footer class="celebration-footer">
+      <div class="footer-glow"></div>
+      <div class="footer-content">
+        <p class="footer-heart">Made with infinite love for you ❤️</p>
+        <p class="footer-date">28 September • Forever & Always</p>
+        <button class="btn-back-to-top" id="btn-back-to-top">⬆ Back to Top</button>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
